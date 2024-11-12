@@ -109,6 +109,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@repo/backend':
+        specifier: workspace:*
+        version: link:../../packages/backend
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
