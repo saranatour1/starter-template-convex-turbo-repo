@@ -1,6 +1,7 @@
 import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ConvexClientProvider } from "./Provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );

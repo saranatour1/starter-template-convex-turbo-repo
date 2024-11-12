@@ -12,9 +12,11 @@
     "@repo/ui": "workspace:*",
     "next": "14.2.6",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "convex":"catalog:"
   },
   "devDependencies": {
+    "@repo/backend":"workspace:*",
     "@next/eslint-plugin-next": "14.2.8",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
