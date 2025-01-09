@@ -29,7 +29,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "catalog:",
-    "@types/react": "catalog:react18",
+    "@types/react": "catalog:react19",
     "autoprefixer": "^10",
     "postcss": "^8",
     "postcss-load-config": "^6",
