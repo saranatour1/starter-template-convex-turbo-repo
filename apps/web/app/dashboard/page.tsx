@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { UserNav } from "../../features/user-nav";
+import { DataTable } from "../../features/Table/data-table";
+import { columns } from "../../features/Table/columns";
 
 export default async function Page(){
   return ( <>
@@ -15,7 +17,16 @@ export default async function Page(){
           <UserNav />
         </div>
       </div>
-      {/* <DataTable data={tasks} columns={columns} /> */}
+      <DataTable data={[
+          {
+            "id": "TASK-7839",
+            "title": "We need to bypass the neural TCP card!",
+            "status": "todo",
+            "label": "bug",
+            "priority": "high"
+          }
+      ]} 
+      columns={columns} />
     </div>
   </>)
 }
