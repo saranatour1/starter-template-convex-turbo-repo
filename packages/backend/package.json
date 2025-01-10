@@ -11,8 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "@auth/core": "0.37.0",
-    "@convex-dev/auth":"catalog:",
-    "convex": "catalog:"
+    "@convex-dev/auth": "catalog:",
+    "convex": "catalog:",
+    "convex-helpers": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

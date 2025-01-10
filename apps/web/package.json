@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@convex-dev/auth": "catalog:",
     "@repo/backend": "workspace:*",
     "@repo/ui": "workspace:*",
+    "@tanstack/react-table": "^8.20.6",
     "convex": "catalog:",
-    "@convex-dev/auth":"catalog:",
+    "convex-helpers": "catalog:",
     "next": "15.1.4",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "lucide-react":"catalog:"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "15.1.4",

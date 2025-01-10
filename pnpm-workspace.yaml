@@ -12,6 +12,7 @@ catalog:
   "@types/eslint": ^8
   "convex": ^1.17.4
   "@convex-dev/auth": ^0.0.80
+  "convex-helpers": ^0.1.67
 
 catalogs:
   react19:
