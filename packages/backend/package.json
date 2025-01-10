@@ -5,12 +5,15 @@
     "dev": "convex dev",
     "setup": "convex dev --until-success"
   },
-  "exports":{
-    "./convex/*":"./convex/*"
+  "exports": {
+    "./convex/*": "./convex/*"
   },
   "license": "ISC",
   "dependencies": {
-    "convex": "catalog:"
+    "@auth/core": "0.37.0",
+    "@convex-dev/auth": "catalog:",
+    "convex": "catalog:",
+    "convex-helpers": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
