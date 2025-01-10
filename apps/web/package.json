@@ -12,6 +12,7 @@
     "@repo/backend": "workspace:*",
     "@repo/ui": "workspace:*",
     "convex": "catalog:",
+    "@convex-dev/auth":"catalog:",
     "next": "15.1.4",
     "react": "19.0.0",
     "react-dom": "19.0.0"
