@@ -4,15 +4,15 @@
   "rsc": true,
   "tsx": true,
   "tailwind": {
-    "config": "../../packages/ui/tailwind.config.ts",
-    "css": "../../packages/ui/src/styles/globals.css",
+    "config": "./tailwind.config.ts",
+    "css": "./src/globals.css",
     "baseColor": "zinc",
     "cssVariables": true
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@repo/ui/components",
-    "ui": "@repo/ui/components/ui",
+    "components": "@repo/ui/src/components",
+    "ui": "@repo/ui/src/components/ui",
     "utils": "@repo/ui/lib/utils",
     "lib": "@repo/ui/lib",
     "hooks": "@repo/ui/hooks"
