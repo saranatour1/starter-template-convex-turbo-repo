@@ -17,7 +17,7 @@ jobs:
         with:
           project: 'https://github.com/users/saranatour1/projects/8'
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          MY_GITHUB_TOKEN: ${{ github.token }}
 
       - name: Debug Project Assignment
         if: steps.assign_project.outcome != 'success'
