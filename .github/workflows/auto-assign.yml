@@ -8,17 +8,36 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: 'Assign Issue to Project'
+        id: assign_project
         uses: srggrs/assign-one-project-github-action@1.3.1
         with:
           project: 'https://github.com/users/saranatour1/projects/8'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
+      - name: Debug Project Assignment
+        if: steps.assign_project.outcome != 'success'
+        run: echo "Failed to assign issue to project. Check project URL and permissions."
+
       - name: "Assign milestone"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ISSUE_NUMBER=${{ github.event.issue.number }}
+          echo "Issue Number: $ISSUE_NUMBER"
+          
+          # Fetch milestone ID
           MILESTONE_ID=$(gh api repos/saranatour1/starter-template-convex-turbo-repo/milestones --jq '.[] | select(.title=="v1.0") | .number')
-          gh api repos/saranatour1/starter-template-convex-turbo-repo/issues/$ISSUE_NUMBER --method PATCH -f milestone=$MILESTONE_ID
+          echo "Milestone ID: $MILESTONE_ID"
+          
+          # Assign milestone to issue
+          if [ -n "$MILESTONE_ID" ]; then
+            gh api repos/saranatour1/starter-template-convex-turbo-repo/issues/$ISSUE_NUMBER --method PATCH -f milestone=$MILESTONE_ID
+            echo "Milestone assigned successfully."
+          else
+            echo "Milestone 'v1.0' not found."
+          fi
