@@ -16,7 +16,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: "Assign milestone"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-            ISSUE_NUMBER=${{ github.event.issue.number }}
-            MILESTONE_ID=$(gh api repos/saranatour1/starter-template-convex-turbo-repo/milestones --jq '.[] | select(.title=="v1.0") | .number')
-
+          ISSUE_NUMBER=${{ github.event.issue.number }}
+          MILESTONE_ID=$(gh api repos/saranatour1/starter-template-convex-turbo-repo/milestones --jq '.[] | select(.title=="v1.0") | .number')
+          gh api repos/saranatour1/starter-template-convex-turbo-repo/issues/$ISSUE_NUMBER --method PATCH -f milestone=$MILESTONE_ID
