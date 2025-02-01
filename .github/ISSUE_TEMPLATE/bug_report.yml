@@ -14,3 +14,8 @@ body:
       placeholder: "Describe the issue here..."
     validations:
       required: true
+milestone: Phase one
+
+project: "project"
+assignees:
+  - "saranatour1"
