@@ -1,0 +1,22 @@
+name: Auto Assign Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Assign Issue to Project'
+        uses: srggrs/assign-one-project-github-action@1.3.1
+        with:
+          project: 'https://github.com/users/saranatour1/projects/8'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: "Assign milestone"
+        run: |
+            ISSUE_NUMBER=${{ github.event.issue.number }}
+            MILESTONE_ID=$(gh api repos/saranatour1/starter-template-convex-turbo-repo/milestones --jq '.[] | select(.title=="v1.0") | .number')
+
