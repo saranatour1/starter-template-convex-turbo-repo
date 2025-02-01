@@ -2,7 +2,13 @@ name: Auto Assign Issue
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   assign:
@@ -16,16 +22,12 @@ jobs:
         uses: srggrs/assign-one-project-github-action@1.3.1
         with:
           project: 'https://github.com/users/saranatour1/projects/8'
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
       - name: Debug Project Assignment
         if: steps.assign_project.outcome != 'success'
         run: echo "Failed to assign issue to project. Check project URL and permissions."
 
       - name: "Assign milestone"
-        env:
-          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         run: |
           ISSUE_NUMBER=${{ github.event.issue.number }}
           echo "Issue Number: $ISSUE_NUMBER"
