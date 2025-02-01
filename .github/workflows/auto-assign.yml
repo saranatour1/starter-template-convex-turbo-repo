@@ -9,7 +9,7 @@ on:
     types: [created]
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
 jobs:
   add-to-project:
@@ -20,6 +20,6 @@ jobs:
         with:
           # Replace with your actual project URL
           project-url: https://github.com/users/saranatour1/projects/8
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.MY_GITHUB_TOKEN }}
           labeled: bug, needs-triage
           label-operator: OR
