@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "General Question"
+    url: "mail:reach@saranatour.dev"
+    about: "Ask general questions or seek help in discussions."
